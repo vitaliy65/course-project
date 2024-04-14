@@ -1,0 +1,267 @@
+﻿namespace Курсовая_работа.Forms
+{
+    partial class Products_form
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            panel1 = new Panel();
+            Label4 = new LinkLabel();
+            textBox1 = new TextBox();
+            productBanner8 = new image_description_button.ProductBanner();
+            productBanner7 = new image_description_button.ProductBanner();
+            productBanner6 = new image_description_button.ProductBanner();
+            productBanner5 = new image_description_button.ProductBanner();
+            productBanner4 = new image_description_button.ProductBanner();
+            productBanner3 = new image_description_button.ProductBanner();
+            productBanner2 = new image_description_button.ProductBanner();
+            productBanner1 = new image_description_button.ProductBanner();
+            pictureBox1 = new PictureBox();
+            label2 = new Label();
+            label1 = new Label();
+            button4 = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackgroundImage = Properties.Resources.new_Form_food;
+            panel1.Controls.Add(Label4);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(productBanner8);
+            panel1.Controls.Add(productBanner7);
+            panel1.Controls.Add(productBanner6);
+            panel1.Controls.Add(productBanner5);
+            panel1.Controls.Add(productBanner4);
+            panel1.Controls.Add(productBanner3);
+            panel1.Controls.Add(productBanner2);
+            panel1.Controls.Add(productBanner1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(button4);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1024, 768);
+            panel1.TabIndex = 0;
+            // 
+            // Label4
+            // 
+            Label4.ActiveLinkColor = Color.FromArgb(255, 128, 0);
+            Label4.AutoSize = true;
+            Label4.BackColor = Color.Transparent;
+            Label4.Font = new Font("Tahoma", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            Label4.LinkColor = Color.FromArgb(64, 0, 0);
+            Label4.Location = new Point(455, 18);
+            Label4.Name = "Label4";
+            Label4.Size = new Size(123, 25);
+            Label4.TabIndex = 37;
+            Label4.TabStop = true;
+            Label4.Text = "Registration";
+            Label4.VisitedLinkColor = Color.FromArgb(128, 128, 255);
+            Label4.LinkClicked += Label4_LinkClicked;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.White;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Enabled = false;
+            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            textBox1.ForeColor = Color.DarkGray;
+            textBox1.Location = new Point(39, 216);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(956, 81);
+            textBox1.TabIndex = 35;
+            // 
+            // productBanner8
+            // 
+            productBanner8.BackColor = Color.FromArgb(255, 255, 236);
+            productBanner8.label_Name = null;
+            productBanner8.label_Price = null;
+            productBanner8.Location = new Point(39, 376);
+            productBanner8.Name = "productBanner8";
+            productBanner8.Productimage = null;
+            productBanner8.Size = new Size(205, 165);
+            productBanner8.TabIndex = 34;
+            // 
+            // productBanner7
+            // 
+            productBanner7.BackColor = Color.FromArgb(255, 255, 236);
+            productBanner7.label_Name = null;
+            productBanner7.label_Price = null;
+            productBanner7.Location = new Point(290, 376);
+            productBanner7.Name = "productBanner7";
+            productBanner7.Productimage = null;
+            productBanner7.Size = new Size(205, 165);
+            productBanner7.TabIndex = 33;
+            // 
+            // productBanner6
+            // 
+            productBanner6.BackColor = Color.FromArgb(255, 255, 236);
+            productBanner6.label_Name = null;
+            productBanner6.label_Price = null;
+            productBanner6.Location = new Point(540, 376);
+            productBanner6.Name = "productBanner6";
+            productBanner6.Productimage = null;
+            productBanner6.Size = new Size(205, 165);
+            productBanner6.TabIndex = 33;
+            // 
+            // productBanner5
+            // 
+            productBanner5.BackColor = Color.FromArgb(255, 255, 236);
+            productBanner5.label_Name = null;
+            productBanner5.label_Price = null;
+            productBanner5.Location = new Point(790, 376);
+            productBanner5.Name = "productBanner5";
+            productBanner5.Productimage = null;
+            productBanner5.Size = new Size(205, 165);
+            productBanner5.TabIndex = 32;
+            // 
+            // productBanner4
+            // 
+            productBanner4.BackColor = Color.FromArgb(255, 255, 236);
+            productBanner4.label_Name = null;
+            productBanner4.label_Price = null;
+            productBanner4.Location = new Point(39, 581);
+            productBanner4.Name = "productBanner4";
+            productBanner4.Productimage = null;
+            productBanner4.Size = new Size(205, 165);
+            productBanner4.TabIndex = 31;
+            // 
+            // productBanner3
+            // 
+            productBanner3.BackColor = Color.FromArgb(255, 255, 236);
+            productBanner3.label_Name = null;
+            productBanner3.label_Price = null;
+            productBanner3.Location = new Point(290, 581);
+            productBanner3.Name = "productBanner3";
+            productBanner3.Productimage = null;
+            productBanner3.Size = new Size(205, 165);
+            productBanner3.TabIndex = 30;
+            // 
+            // productBanner2
+            // 
+            productBanner2.BackColor = Color.FromArgb(255, 255, 236);
+            productBanner2.label_Name = null;
+            productBanner2.label_Price = null;
+            productBanner2.Location = new Point(540, 581);
+            productBanner2.Name = "productBanner2";
+            productBanner2.Productimage = null;
+            productBanner2.Size = new Size(205, 165);
+            productBanner2.TabIndex = 29;
+            // 
+            // productBanner1
+            // 
+            productBanner1.BackColor = Color.FromArgb(255, 255, 236);
+            productBanner1.label_Name = null;
+            productBanner1.label_Price = null;
+            productBanner1.Location = new Point(790, 581);
+            productBanner1.Name = "productBanner1";
+            productBanner1.Productimage = null;
+            productBanner1.Size = new Size(205, 165);
+            productBanner1.TabIndex = 28;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Location = new Point(45, 41);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(54, 54);
+            pictureBox1.TabIndex = 27;
+            pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Tahoma", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label2.Location = new Point(73, 148);
+            label2.Name = "label2";
+            label2.Size = new Size(58, 25);
+            label2.TabIndex = 16;
+            label2.Text = "Time";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Tahoma", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label1.Location = new Point(39, 106);
+            label1.Name = "label1";
+            label1.Size = new Size(84, 33);
+            label1.TabIndex = 15;
+            label1.Text = "Name";
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Transparent;
+            button4.BackgroundImage = Properties.Resources.user;
+            button4.BackgroundImageLayout = ImageLayout.Center;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Location = new Point(965, 10);
+            button4.Name = "button4";
+            button4.Size = new Size(48, 48);
+            button4.TabIndex = 14;
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // Products_form
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1024, 768);
+            Controls.Add(panel1);
+            Name = "Products_form";
+            Text = "Product_form";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Panel panel1;
+        private Label label2;
+        private Label label1;
+        private Button button4;
+        private PictureBox pictureBox1;
+        private image_description_button.ProductBanner productBanner1;
+        private image_description_button.ProductBanner productBanner8;
+        private image_description_button.ProductBanner productBanner7;
+        private image_description_button.ProductBanner productBanner6;
+        private image_description_button.ProductBanner productBanner5;
+        private image_description_button.ProductBanner productBanner4;
+        private image_description_button.ProductBanner productBanner3;
+        private image_description_button.ProductBanner productBanner2;
+        private TextBox textBox1;
+        private LinkLabel Label4;
+    }
+}
