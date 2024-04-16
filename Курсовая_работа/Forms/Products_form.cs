@@ -7,56 +7,50 @@ namespace Курсовая_работа.Forms
 {
     internal partial class Products_form : Form
     {
-        ProductController controller;
-        ProductBanner[] productBanners;
+        ProductController products;
 
         public Products_form(Restaurant restaurant)
         {
             InitializeComponent();
-            controller = new ProductController();
+            products = new ProductController();
             FormClosing += ButtonInteraction.FormClosing;
+
+            try
+            {
+                pictureBox1.BackgroundImage = new Bitmap($"{Application.StartupPath}\\{restaurant.FilePathimage}");
+            } catch (Exception ex) { }
+
             label1.Text = restaurant.Name;
             label2.Text = restaurant.timeForCustomer;
             textBox1.Text = restaurant.Description;
             Label4.Text = "Le-Peta";
-
-            // Получение всех элементов ProductBanner на форме
-            productBanners = panel1.Controls.OfType<ProductBanner>().ToArray();
 
             InstantiateProducts(restaurant);
         }
 
         void InstantiateProducts(Restaurant restaurant)
         {
-            int i = 0;
-            foreach (var product in controller.GetElements())
+            flowLayoutPanel1.WrapContents = true;
+
+            foreach (var product in products.GetElements())
             {
                 if (restaurant.Id == product.RestaurantId)
                 {
-                    productBanners[i].Enabled = true;
-                    productBanners[i].Visible = true;
-                    productBanners[i].label_Name = product.Name;
-                    productBanners[i].label_Price = product.Price.ToString();
-                    productBanners[i].Tag = product.ProductId;
-                    productBanners[i].ProductBannerAction += ProductBanner_click;
-
+                    ProductBanner banner = new ProductBanner();
+                    // Настраиваем его свойства на основе данных продукта
                     try
                     {
-                        string imagePath = product.FilePathimage;
-                        productBanners[i].Productimage = new Bitmap($"{Application.StartupPath}\\{imagePath}");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message); // Пример
-                    }
-                    i++;
-                }
-            }
+                        banner.Productimage = new Bitmap($"{Application.StartupPath}\\{product.FilePathimage}");
+                    } catch (Exception ex) { }
 
-            for (; i < productBanners.Count(); i++)
-            {
-                productBanners[i].Enabled = false;
-                productBanners[i].Visible = false;
+                    banner.label_Name  = product.Name;
+                    banner.label_Price = product.Price.ToString();
+                    banner.Tag         = product.ProductId;
+                    banner.ProductBannerAction += ProductBanner_click;
+
+                    // Добавляем listItemBanner в FlowLayoutPanel
+                    flowLayoutPanel1.Controls.Add(banner);
+                }
             }
         }
 
@@ -65,12 +59,12 @@ namespace Курсовая_работа.Forms
             if (sender is PictureBox pictureBox)
             {
                 // Получаем родительский контрол PictureBox, который должен быть экземпляром RestaurantBanner
-                var productBanner = pictureBox.Parent.Parent as ProductBanner;
+                var productBanner = pictureBox.Parent.Parent.Parent as ProductBanner;
 
                 // Проверяем, является ли родительский контрол PictureBox экземпляром RestaurantBanner
                 if (productBanner != null)
                 {
-                    foreach (var product in controller.GetElements())
+                    foreach (var product in products.GetElements())
                     {
                         if (product.ProductId == int.Parse(productBanner.Tag.ToString()))
                         {

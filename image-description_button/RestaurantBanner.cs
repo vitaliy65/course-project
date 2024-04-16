@@ -49,17 +49,5 @@ namespace image_description_button
             pictureBox1.Height -= 2 * decreaseAmount; // Уменьшение высоты pictureBox1
             Invalidate();
         }
-
-        private void RestaurantBanner_Paint(object sender, PaintEventArgs e)
-        {
-            Color color = Color.FromArgb(255, 152, 0);
-            int borderWidth = 3; // Задаем толщину контура
-
-            ControlPaint.DrawBorder(e.Graphics, panel1.ClientRectangle, 
-                color, borderWidth, ButtonBorderStyle.Solid, // Указываем толщину и стиль контура
-                color, borderWidth, ButtonBorderStyle.Solid,
-                color, borderWidth, ButtonBorderStyle.Solid,
-                color, borderWidth, ButtonBorderStyle.Solid);
-        }
     }
 }

@@ -14,38 +14,32 @@ namespace Курсовая_работа
             InitializeComponent();
             FormClosing += ButtonInteraction.FormClosing;
             controller = new RestaurantController();
-            RestaurantBanner[] restaurantBanners = { restaurantBanner1, restaurantBanner2, restaurantBanner3, restaurantBanner4, restaurantBanner5, restaurantBanner6, restaurantBanner7, restaurantBanner8 };
-            InstantiateAllUserControls(restaurantBanners);
+            InstantiateAllUserControls();
         }
 
-        void InstantiateAllUserControls(RestaurantBanner[] restaurantBanners)
+        void InstantiateAllUserControls()
         {
-            int i = 0;
             var restaurants = controller.GetElements().ToArray();
-            for (i = 0; i < restaurants.Count(); i++)
-            {
-                restaurantBanners[i].Enabled = true;
-                restaurantBanners[i].Visible = true;
-                restaurantBanners[i].Tag = restaurants[i].Id;
-                restaurantBanners[i].label_description = restaurants[i].Name;
-                restaurantBanners[i].bannerAction += RestaurantBanner_click;
+            flowLayoutPanel1.WrapContents = true;
 
-                // Получение изображения из файла и присвоение его переменной image
+            foreach (var restaurant in restaurants)
+            {
+                RestaurantBanner banner = new RestaurantBanner();
+                // Настраиваем его свойства на основе данных продукта
                 try
                 {
-                    string imagePath = restaurants[i].FilePathimage;
-                    restaurantBanners[i].image = new Bitmap($"{Application.StartupPath}\\{imagePath}");
+                    banner.image = new Bitmap($"{Application.StartupPath}\\{restaurant.FilePathimage}");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message); // Пример
+                    MessageBox.Show(ex.Message);
                 }
-            }
 
-            for (; i < restaurantBanners.Count(); i++)
-            {
-                restaurantBanners[i].Enabled = false;
-                restaurantBanners[i].Visible = false;
+                banner.Tag = restaurant.Id;
+                banner.label_description = restaurant.Name;
+                banner.bannerAction += RestaurantBanner_click;
+                // Добавляем listItemBanner в FlowLayoutPanel
+                flowLayoutPanel1.Controls.Add(banner);
             }
         }
 
@@ -54,7 +48,7 @@ namespace Курсовая_работа
             if (sender is PictureBox pictureBox)
             {
                 // Получаем родительский контрол PictureBox, который должен быть экземпляром RestaurantBanner
-                var restaurantBanner = pictureBox.Parent.Parent as RestaurantBanner;
+                var restaurantBanner = pictureBox.Parent.Parent.Parent as RestaurantBanner;
 
                 // Проверяем, является ли родительский контрол PictureBox экземпляром RestaurantBanner
                 if (restaurantBanner != null)

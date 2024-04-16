@@ -7,9 +7,11 @@ namespace Курсовая_работа.Forms
 {
     public partial class Customer_form : Form
     {
+        float total_price = 0;
         public Customer_form()
         {
             InitializeComponent();
+            label4.Text = "0 грн";
             InitializeCart();
             InitializeCustomer();
             FormClosing += ButtonInteraction.FormClosing;
@@ -36,10 +38,15 @@ namespace Курсовая_работа.Forms
                     listItemBanner listItem = new listItemBanner();
                     // Настраиваем его свойства на основе данных продукта
                     listItem.Productimage = new Bitmap($"{Application.StartupPath}\\{product.FilePathimage}");
+                    listItem.label_Name = "\""+ product.Name + "\"";
+                    listItem.label_Price = product.Price.ToString() + " грн";
+                    total_price += product.Price;
                     // Добавляем listItemBanner в FlowLayoutPanel
                     flowLayoutPanel1.Controls.Add(listItem);
                 }
             }
+
+            label4.Text = Math.Round(total_price, 2).ToString() + " грн";
         }
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
@@ -79,6 +86,7 @@ namespace Курсовая_работа.Forms
         {
             RegistredCustomer.ClearCart();
             flowLayoutPanel1.Controls.Clear();
+            label4.Text = "0 грн";
         }
     }
 }

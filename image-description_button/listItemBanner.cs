@@ -8,6 +8,14 @@ namespace image_description_button
         [Category("Custom Properties")]
         public Image Productimage { get; set; }
 
+        [Browsable(true)]
+        [Category("Custom Properties")]
+        public string label_Name { get; set; }
+
+        [Browsable(true)]
+        [Category("Custom Properties")]
+        public string label_Price { get; set; }
+
         public listItemBanner()
         {
             InitializeComponent();
@@ -16,6 +24,8 @@ namespace image_description_button
         private void ProductBanner_Load(object sender, EventArgs e)
         {
             pictureBox1.BackgroundImage = Productimage;
+            label1.Text = label_Name;
+            label2.Text = label_Price;
         }
     }
 }
