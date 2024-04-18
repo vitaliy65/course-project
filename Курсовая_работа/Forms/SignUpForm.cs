@@ -36,34 +36,28 @@ namespace Курсовая_работа
             Hide();
         }
 
-        // Вхід у програму
+        // Вход пользователя
         private void button1_Click(object sender, EventArgs e)
         {
-            IEnumerable<char> temp = textBox1.Text.TakeLast(10);
-            string text1 = "";
-            bool verifyCustomer = customerController.TryFind(g => (g.gmail == textBox1.Text) && hasher.VerifyPassword(g.password, textBox2.Text));
+            string gmail = textBox1.Text;
+            string password = textBox2.Text;
+            Customer? verifyCustomer = customerController.Find(g => (g.gmail == gmail) && hasher.VerifyPassword(g.password, password));
 
-            foreach (char c in temp)
+            if (textBox1.Text == "admin_main" && password == "Posvistak")
             {
-                text1 += c;
+                OpenAdminForm();
             }
-
-            if (textBox1.Text == "admin_main" && textBox2.Text == "Posvistak")
+            else if (verifyCustomer != null)
             {
-                Admin_form form = new Admin_form();
-                form.Location = Location;
-                form.Show();
-                Hide();
-            }
-            else
-            if (verifyCustomer)
-            {
-                Customer? findedCustomer = customerController.Find(customerController.GetElements().Where(g => (g.gmail == textBox1.Text)).First());
-                RegistredCustomer.CurrentCustomer = findedCustomer;
-                Form_main_menu main_Menu = new Form_main_menu();
-                main_Menu.Location = Location;
-                main_Menu.Show();
-                Hide();
+                RegistredCustomer.CurrentCustomer = verifyCustomer;
+                if (checkBox1.Checked)
+                {
+                    // Обновляем флаг RememberMe при необходимости
+                    verifyCustomer.RememberMeFlag = true;
+                    customerController.Change(verifyCustomer);
+                    RegistredCustomer.SaveUserData();
+                }
+                OpenMainForm();
             }
             else
             {
@@ -71,6 +65,22 @@ namespace Курсовая_работа
                 panel1.BackColor = Color.Red;
                 panel2.BackColor = Color.Red;
             }
+        }
+
+        void OpenAdminForm()
+        {
+            Admin_form form = new Admin_form();
+            form.Location = Location;
+            form.Show();
+            Hide();
+        }
+
+        void OpenMainForm()
+        {
+            Form_main_menu main_Menu = new Form_main_menu();
+            main_Menu.Location = Location;
+            main_Menu.Show();
+            Hide();
         }
     }
 }

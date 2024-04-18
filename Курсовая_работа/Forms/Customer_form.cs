@@ -15,6 +15,12 @@ namespace Курсовая_работа.Forms
             InitializeCart();
             InitializeCustomer();
             FormClosing += ButtonInteraction.FormClosing;
+            button1.MouseEnter += ButtonInteraction.UpScale_button;
+            button1.MouseLeave += ButtonInteraction.DownScale_button;
+            button2.MouseEnter += ButtonInteraction.UpScale_button;
+            button2.MouseLeave += ButtonInteraction.DownScale_button;
+            button3.MouseEnter += ButtonInteraction.UpScale_button;
+            button3.MouseLeave += ButtonInteraction.DownScale_button;
         }
 
         private void InitializeCustomer()

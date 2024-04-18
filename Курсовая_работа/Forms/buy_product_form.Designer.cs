@@ -30,18 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(buy_product_form));
             panel1 = new Panel();
+            textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
             button1 = new Button();
             label2 = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button1);
@@ -52,6 +54,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(512, 768);
             panel1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(255, 152, 0);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Tahoma", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            textBox1.Location = new Point(21, 429);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(479, 120);
+            textBox1.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -66,8 +79,11 @@
             // button1
             // 
             button1.BackColor = Color.Transparent;
-            button1.BackgroundImage = Properties.Resources.Buy_button;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Location = new Point(128, 678);
             button1.Name = "button1";
@@ -99,17 +115,6 @@
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(255, 152, 0);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Tahoma", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(21, 429);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(479, 120);
-            textBox1.TabIndex = 5;
-            // 
             // buy_product_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -117,7 +122,6 @@
             ClientSize = new Size(512, 768);
             Controls.Add(panel1);
             Name = "buy_product_form";
-            Text = "buy_product_form";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

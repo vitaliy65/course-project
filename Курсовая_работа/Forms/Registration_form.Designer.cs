@@ -42,6 +42,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(panel4);
@@ -126,6 +127,8 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.Transparent;
             button1.Location = new Point(376, 520);
@@ -143,7 +146,6 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Registration_form";
-            Text = "noname project";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

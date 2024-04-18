@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Курсовая_работа.Data;
 
@@ -11,9 +12,11 @@ using Курсовая_работа.Data;
 namespace Курсовая_работа.Migrations
 {
     [DbContext(typeof(Le_PeTa_context))]
-    partial class Le_PeTaModelSnapshot : ModelSnapshot
+    [Migration("20240418164024_added_RememberMeFlag_to_customer")]
+    partial class added_RememberMeFlag_to_customer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

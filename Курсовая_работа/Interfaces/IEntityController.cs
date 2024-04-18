@@ -10,6 +10,7 @@ namespace Курсовая_работа.Interfaces
         void Remove(Func<T, bool> Delegate);
         bool TryFind(Func<T, bool> Delegate);
         T? Find(T entity);
+        T? Find(Func<T, bool> Delegate);
         T? FindById(int id);
         void Change(T entity);
     }

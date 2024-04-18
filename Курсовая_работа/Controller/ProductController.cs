@@ -85,5 +85,10 @@ namespace Курсовая_работа.Controller
         {
             return context.products.Where(e => e.ProductId == id).FirstOrDefault();
         }
+
+        public Product? Find(Func<Product, bool> Delegate)
+        {
+            return context.products.Where(Delegate).FirstOrDefault();
+        }
     }
 }

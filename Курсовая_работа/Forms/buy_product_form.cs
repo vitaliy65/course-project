@@ -12,6 +12,8 @@ namespace Курсовая_работа.Forms
             thisProduct = product;
             InitializeComponent();
             InitializeInformation();
+            button1.MouseEnter += ButtonInteraction.UpScale_button;
+            button1.MouseLeave += ButtonInteraction.DownScale_button;
         }
 
         private void InitializeInformation()
@@ -33,7 +35,7 @@ namespace Курсовая_работа.Forms
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
         {
-            button1.BackgroundImage = new Bitmap($"{Application.StartupPath}\\Resources\\buttons\\Buy_clicked_button.png");
+            button1.BackgroundImage = new Bitmap($"{Application.StartupPath}\\Resources\\buttons\\Buy_clicked.png");
         }
     }
 }

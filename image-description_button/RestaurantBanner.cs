@@ -22,32 +22,27 @@ namespace image_description_button
         private void UserControl1_Load(object sender, EventArgs e)
         {
             pictureBox1.BackgroundImage = image;
+            pictureBox2.BackgroundImage = image;
+
             label1.Text = label_description;
-            pictureBox1.Click += bannerAction;
+
+            pictureBox2.Click += bannerAction;
         }
 
         private void forMouseEnter(object sender, EventArgs e)
         {
-            int increaseAmount = (int)(pictureBox1.Width * 0.03); // Вычисление увеличения на 3% для каждой стороны
-
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize; // Установка размера pictureBox1 в соответствии с размером изображения
-            pictureBox1.Left -= increaseAmount; // Сдвиг pictureBox1 влево
-            pictureBox1.Top -= increaseAmount; // Сдвиг pictureBox1 вверх
-            pictureBox1.Width += 2 * increaseAmount; // Увеличение ширины pictureBox1
-            pictureBox1.Height += 2 * increaseAmount; // Увеличение высоты pictureBox1
-            Invalidate();
+            pictureBox1.Enabled = false;
+            pictureBox2.Visible = false;
+            pictureBox2.Enabled = true;
+            pictureBox2.Visible = true;
         }
 
         private void forMouseLeave(object sender, EventArgs e)
         {
-            int decreaseAmount = (int)(pictureBox1.Width * 0.03); // Вычисление уменьшения на 3% для каждой стороны
-
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize; // Установка размера pictureBox1 в соответствии с размером изображения
-            pictureBox1.Left += decreaseAmount; // Сдвиг pictureBox1 вправо
-            pictureBox1.Top += decreaseAmount; // Сдвиг pictureBox1 вниз
-            pictureBox1.Width -= 2 * decreaseAmount; // Уменьшение ширины pictureBox1
-            pictureBox1.Height -= 2 * decreaseAmount; // Уменьшение высоты pictureBox1
-            Invalidate();
+            pictureBox1.Enabled = true;
+            pictureBox2.Visible = true;
+            pictureBox2.Enabled = false;
+            pictureBox2.Visible = false;
         }
     }
 }

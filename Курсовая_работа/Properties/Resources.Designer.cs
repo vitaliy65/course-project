@@ -73,16 +73,6 @@ namespace Курсовая_работа.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Buy_button {
-            get {
-                object obj = ResourceManager.GetObject("Buy_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Buy_menu {
             get {
                 object obj = ResourceManager.GetObject("Buy menu", resourceCulture);
@@ -113,9 +103,9 @@ namespace Курсовая_работа.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Form_main_menu_new {
+        internal static System.Drawing.Bitmap Form_main_menu {
             get {
-                object obj = ResourceManager.GetObject("Form main menu_new", resourceCulture);
+                object obj = ResourceManager.GetObject("Form main menu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +146,36 @@ namespace Курсовая_работа.Properties {
         internal static System.Drawing.Bitmap menu_button__food_1 {
             get {
                 object obj = ResourceManager.GetObject("menu button (food)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_button__food_2 {
+            get {
+                object obj = ResourceManager.GetObject("menu button (food)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_button__location_ {
+            get {
+                object obj = ResourceManager.GetObject("menu button (location)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_button__telegram_ {
+            get {
+                object obj = ResourceManager.GetObject("menu button (telegram)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -45,8 +45,9 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Controls.Add(label4);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(button3);
@@ -77,9 +78,9 @@
             // panel2
             // 
             panel2.AutoScroll = true;
-            panel2.BackColor = Color.FromArgb(95, 134, 112);
+            panel2.BackColor = Color.Transparent;
             panel2.Controls.Add(flowLayoutPanel1);
-            panel2.Location = new Point(122, 206);
+            panel2.Location = new Point(131, 206);
             panel2.Name = "panel2";
             panel2.Size = new Size(780, 480);
             panel2.TabIndex = 8;
@@ -88,7 +89,7 @@
             // 
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.AutoSize = true;
-            flowLayoutPanel1.BackColor = Color.FromArgb(95, 134, 112);
+            flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -99,11 +100,13 @@
             // 
             button3.BackColor = Color.Transparent;
             button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Center;
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
             button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.Transparent;
-            button3.Location = new Point(779, 153);
+            button3.Location = new Point(788, 149);
             button3.Name = "button3";
             button3.Size = new Size(123, 43);
             button3.TabIndex = 6;
@@ -116,11 +119,13 @@
             // 
             button2.BackColor = Color.Transparent;
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Center;
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
             button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button2.FlatStyle = FlatStyle.Flat;
             button2.ForeColor = Color.Transparent;
-            button2.Location = new Point(640, 153);
+            button2.Location = new Point(649, 149);
             button2.Name = "button2";
             button2.Size = new Size(123, 43);
             button2.TabIndex = 5;
@@ -166,8 +171,10 @@
             // 
             button1.BackColor = Color.Transparent;
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.Transparent;
             button1.Location = new Point(449, 712);
@@ -182,10 +189,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1024, 768);
             Controls.Add(panel1);
             Name = "Customer_form";
-            Text = "Customer_form";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

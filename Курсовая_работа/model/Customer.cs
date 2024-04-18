@@ -8,7 +8,8 @@
         public string gmail { get; set; } = null!;
         public string password { get; set; } = null!;
         public string phone { get; set; } = null!;
-        
+        public bool RememberMeFlag { get; set; } = false;
+
         // Свойства для хранения координат
         public double Latitude { get; set; }
         public double Longitude { get; set; }

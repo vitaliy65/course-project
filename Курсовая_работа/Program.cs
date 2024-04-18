@@ -1,3 +1,4 @@
+using Курсовая_работа.Classes;
 using Курсовая_работа.Forms;
 
 namespace Курсовая_работа
@@ -10,10 +11,19 @@ namespace Курсовая_работа
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new  SignUpForm());
+            SignUpForm signUpForm = new ();
+            Form_main_menu main_menu = new();
+
+            // Проверяем, нужно ли скрыть форму
+            if (RegistredCustomer.CurrentCustomer != null && RegistredCustomer.CurrentCustomer.RememberMeFlag)
+            {
+                Application.Run(main_menu);
+            }
+            else
+            {
+                Application.Run(signUpForm);
+            }
         }
     }
 }

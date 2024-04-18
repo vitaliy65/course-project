@@ -14,6 +14,14 @@ namespace Курсовая_работа
             InitializeComponent();
             FormClosing += ButtonInteraction.FormClosing;
             controller = new RestaurantController();
+            button1.MouseEnter += ButtonInteraction.UpScale_button;
+            button1.MouseLeave += ButtonInteraction.DownScale_button;
+            button2.MouseEnter += ButtonInteraction.UpScale_button;
+            button2.MouseLeave += ButtonInteraction.DownScale_button;
+            button3.MouseEnter += ButtonInteraction.UpScale_button;
+            button3.MouseLeave += ButtonInteraction.DownScale_button;
+            button4.MouseEnter += ButtonInteraction.UpScale_button;
+            button4.MouseLeave += ButtonInteraction.DownScale_button;
             InstantiateAllUserControls();
         }
 
@@ -48,7 +56,7 @@ namespace Курсовая_работа
             if (sender is PictureBox pictureBox)
             {
                 // Получаем родительский контрол PictureBox, который должен быть экземпляром RestaurantBanner
-                var restaurantBanner = pictureBox.Parent.Parent.Parent as RestaurantBanner;
+                var restaurantBanner = pictureBox.Parent.Parent as RestaurantBanner;
 
                 // Проверяем, является ли родительский контрол PictureBox экземпляром RestaurantBanner
                 if (restaurantBanner != null)

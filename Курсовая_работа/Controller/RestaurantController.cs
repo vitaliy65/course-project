@@ -84,5 +84,10 @@ namespace Курсовая_работа.Controller
         {
             return context.restaurants.Where(e => e.Id == id).FirstOrDefault();
         }
+
+        public Restaurant? Find(Func<Restaurant, bool> Delegate)
+        {
+            return context.restaurants.Where(Delegate).FirstOrDefault();
+        }
     }
 }

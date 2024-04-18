@@ -80,5 +80,10 @@ namespace Курсовая_работа.Controller
         {
             return context.customers.Where(cs => cs.Id == id).FirstOrDefault();
         }
+
+        public Customer? Find(Func<Customer, bool> Delegate)
+        {
+            return context.customers.Where(Delegate).FirstOrDefault();
+        }
     }
 }

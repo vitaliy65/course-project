@@ -36,6 +36,7 @@
             button1 = new Button();
             linkLabel1 = new LinkLabel();
             panel3 = new Panel();
+            checkBox1 = new CheckBox();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -86,6 +87,8 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.Transparent;
             button1.Location = new Point(376, 560);
@@ -113,7 +116,10 @@
             // 
             // panel3
             // 
-            panel3.BackgroundImage = Properties.Resources.Form_SignUp1;
+            panel3.BackColor = Color.White;
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.Controls.Add(checkBox1);
             panel3.Controls.Add(textBox1);
             panel3.Controls.Add(linkLabel1);
             panel3.Controls.Add(textBox2);
@@ -126,6 +132,21 @@
             panel3.Size = new Size(1024, 768);
             panel3.TabIndex = 14;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.BackColor = Color.Transparent;
+            checkBox1.BackgroundImageLayout = ImageLayout.None;
+            checkBox1.Cursor = Cursors.Hand;
+            checkBox1.FlatAppearance.BorderColor = Color.Black;
+            checkBox1.FlatAppearance.BorderSize = 3;
+            checkBox1.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            checkBox1.Location = new Point(376, 412);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(15, 14);
+            checkBox1.TabIndex = 14;
+            checkBox1.UseVisualStyleBackColor = false;
+            // 
             // SignUpForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -134,7 +155,6 @@
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "SignUpForm";
-            Text = "tempForm";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -149,5 +169,6 @@
         private Button button1;
         private LinkLabel linkLabel1;
         private Panel panel3;
+        private CheckBox checkBox1;
     }
 }
