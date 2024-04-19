@@ -2,12 +2,12 @@
 
 namespace Курсовая_работа.model
 {
-    public class ProductCategories
+    public class ProductCategory
     {
         public int Id { get; set; }
-        public ProductCategory category { get; set; }
-
         public int ProductId { get; set; }
-        public ICollection<Product> Products { get; set; } = new List<Product>();
+        public Enum.ProductCategory category { get; set; }
+
+        public Product product { get; set; }
     }
 }
