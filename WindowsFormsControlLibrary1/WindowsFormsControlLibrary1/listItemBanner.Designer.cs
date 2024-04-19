@@ -1,4 +1,7 @@
-﻿namespace image_description_button
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+namespace image_description_button
 {
     partial class listItemBanner
     {

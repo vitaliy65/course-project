@@ -45,7 +45,7 @@ namespace Курсовая_работа.Forms
 
                     banner.label_Name  = product.Name;
                     banner.label_Price = product.Price.ToString();
-                    banner.Tag         = product.ProductId;
+                    banner.Tag         = product.Id;
                     banner.ProductBannerAction += ProductBanner_click;
 
                     // Добавляем listItemBanner в FlowLayoutPanel
@@ -66,7 +66,7 @@ namespace Курсовая_работа.Forms
                 {
                     foreach (var product in products.GetElements())
                     {
-                        if (product.ProductId == int.Parse(productBanner.Tag.ToString()))
+                        if (product.Id == int.Parse(productBanner.Tag.ToString()))
                         {
                             buy_product_form buy_product_Form = new buy_product_form(product);
                             buy_product_Form.Show();

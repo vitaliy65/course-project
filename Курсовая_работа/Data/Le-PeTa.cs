@@ -9,6 +9,7 @@ namespace Курсовая_работа.Data
         public DbSet<Order> orders { get; set; } = null!;
         public DbSet<Product> products { get; set; } = null!;
         public DbSet<Restaurant> restaurants { get; set; } = null!;
+        public DbSet<ProductCategories> productCategories { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

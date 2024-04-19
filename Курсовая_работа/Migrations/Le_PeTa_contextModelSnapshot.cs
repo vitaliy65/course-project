@@ -11,7 +11,7 @@ using Курсовая_работа.Data;
 namespace Курсовая_работа.Migrations
 {
     [DbContext(typeof(Le_PeTa_context))]
-    partial class Le_PeTaModelSnapshot : ModelSnapshot
+    partial class Le_PeTa_contextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -59,7 +59,7 @@ namespace Курсовая_работа.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("customers");
+                    b.ToTable("customers", (string)null);
                 });
 
             modelBuilder.Entity("Курсовая_работа.model.Order", b =>
@@ -88,7 +88,7 @@ namespace Курсовая_работа.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("orders");
+                    b.ToTable("orders", (string)null);
                 });
 
             modelBuilder.Entity("Курсовая_работа.model.Product", b =>
@@ -120,7 +120,7 @@ namespace Курсовая_работа.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("products");
+                    b.ToTable("products", (string)null);
                 });
 
             modelBuilder.Entity("Курсовая_работа.model.Restaurant", b =>
@@ -148,7 +148,7 @@ namespace Курсовая_работа.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("restaurants");
+                    b.ToTable("restaurants", (string)null);
                 });
 
             modelBuilder.Entity("Курсовая_работа.model.Order", b =>

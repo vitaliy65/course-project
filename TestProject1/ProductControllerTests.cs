@@ -21,7 +21,7 @@ namespace YourNamespace.Tests
             controller.Add(product);
 
             // Assert
-            var addedProduct = controller.GetElements().FirstOrDefault(p => p.ProductId == product.ProductId);
+            var addedProduct = controller.GetElements().FirstOrDefault(p => p.Id == product.Id);
             Assert.IsNotNull(addedProduct);
         }
 
@@ -34,10 +34,10 @@ namespace YourNamespace.Tests
             controller.Add(product);
 
             // Act
-            controller.RemoveById(product.ProductId);
+            controller.RemoveById(product.Id);
 
             // Assert
-            var removedProduct = controller.GetElements().FirstOrDefault(p => p.ProductId == product.ProductId);
+            var removedProduct = controller.GetElements().FirstOrDefault(p => p.Id == product.Id);
             Assert.IsNull(removedProduct);
         }
 
@@ -55,7 +55,7 @@ namespace YourNamespace.Tests
             controller.Change(updatedProduct);
 
             // Assert
-            var changedProduct = controller.GetElements().FirstOrDefault(p => p.ProductId == updatedProduct.ProductId);
+            var changedProduct = controller.GetElements().FirstOrDefault(p => p.Id == updatedProduct.Id);
             Assert.IsNotNull(changedProduct);
             // Add more assertions as needed to verify changes
         }

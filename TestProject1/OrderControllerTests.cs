@@ -18,7 +18,7 @@ namespace YourNamespace.Tests
             var Customercontroller = new CustomerController();
             var product = Productcontroller.FindById(9);
             var customer = Customercontroller.FindById(1003);
-            var order = new Order { orderPlaced = DateTime.Today, orderFulfilled = DateTime.Today, CustomerId = customer.Id, ProductId = product.ProductId };
+            var order = new Order { orderPlaced = DateTime.Today, orderFulfilled = DateTime.Today, CustomerId = customer.Id, ProductId = product.Id };
 
             // Act
             controller.Add(order);
@@ -37,7 +37,7 @@ namespace YourNamespace.Tests
             var Customercontroller = new CustomerController();
             var product = Productcontroller.FindById(9);
             var customer = Customercontroller.FindById(1003);
-            var order = new Order { orderPlaced = DateTime.Today, orderFulfilled = DateTime.Today, CustomerId = customer.Id, ProductId = product.ProductId };
+            var order = new Order { orderPlaced = DateTime.Today, orderFulfilled = DateTime.Today, CustomerId = customer.Id, ProductId = product.Id };
             controller.Add(order);
 
             // Act
@@ -57,7 +57,7 @@ namespace YourNamespace.Tests
             var Customercontroller = new CustomerController();
             var product = Productcontroller.FindById(9);
             var customer = Customercontroller.FindById(1003);
-            var order = new Order { orderPlaced = DateTime.Today, orderFulfilled = DateTime.Today, CustomerId = customer.Id, ProductId = product.ProductId };
+            var order = new Order { orderPlaced = DateTime.Today, orderFulfilled = DateTime.Today, CustomerId = customer.Id, ProductId = product.Id };
             controller.Add(order);
 
             // Act

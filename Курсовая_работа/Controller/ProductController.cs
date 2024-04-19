@@ -34,17 +34,17 @@ namespace Курсовая_работа.Controller
 
         public Product? Find(Product entity)
         {
-            return context.products.Where(e => e.ProductId == entity.ProductId).FirstOrDefault();
+            return context.products.Where(e => e.Id == entity.Id).FirstOrDefault();
         }
 
         public Product? Product(Product entity)
         {
-            return context.products.Where(e => e.ProductId == entity.ProductId).FirstOrDefault();
+            return context.products.Where(e => e.Id == entity.Id).FirstOrDefault();
         }
 
         public void RemoveById(int id)
         {
-            var product = context.products.FirstOrDefault(p => p.ProductId == id);
+            var product = context.products.FirstOrDefault(p => p.Id == id);
             if (product != null)
             {
                 context.products.Remove(product);
@@ -66,7 +66,7 @@ namespace Курсовая_работа.Controller
         {
             try
             {
-                var existingProduct = context.products.SingleOrDefault(p => p.ProductId == product.ProductId);
+                var existingProduct = context.products.SingleOrDefault(p => p.Id == product.Id);
                 if (existingProduct == null)
                 {
                     throw new ArgumentException("Product not found.");
@@ -83,7 +83,7 @@ namespace Курсовая_работа.Controller
 
         public Product? FindById(int id)
         {
-            return context.products.Where(e => e.ProductId == id).FirstOrDefault();
+            return context.products.Where(e => e.Id == id).FirstOrDefault();
         }
 
         public Product? Find(Func<Product, bool> Delegate)

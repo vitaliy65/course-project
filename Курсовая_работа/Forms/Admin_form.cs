@@ -115,7 +115,7 @@ namespace Курсовая_работа.Forms
         {
             return new Product
             {
-                ProductId = int.Parse(row.Cells["ProductId"].Value.ToString()),
+                Id = int.Parse(row.Cells["ProductId"].Value.ToString()),
                 RestaurantId = int.Parse(textBox1.Text),
                 Name = textBox2.Text,
                 Price = float.Parse(textBox3.Text),
