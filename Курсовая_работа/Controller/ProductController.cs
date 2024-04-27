@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Курсовая_работа.Data;
+using Курсовая_работа.EnumCategory;
 using Курсовая_работа.Interfaces;
 using Курсовая_работа.model;
 
@@ -67,17 +68,13 @@ namespace Курсовая_работа.Controller
             try
             {
                 var existingProduct = context.products.SingleOrDefault(p => p.Id == product.Id);
-                if (existingProduct == null)
-                {
-                    throw new ArgumentException("Product not found.");
-                }
 
                 context.Entry(existingProduct).CurrentValues.SetValues(product);
                 context.SaveChanges();
             }
             catch (Exception)
             {
-                throw;
+                throw new ArgumentException("Product not found.");
             }
         }
 

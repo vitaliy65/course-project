@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -20,10 +21,12 @@ namespace image_description_button
         public string label_Price { get; set; }
 
         public EventHandler ProductBannerAction;
+        public List<ProductCategoryEnum> categories { get; set; }
 
         public ProductBanner()
         {
             InitializeComponent();
+            categories = new List<ProductCategoryEnum>();
         }
 
         private void ProductBanner_Load(object sender, EventArgs e)

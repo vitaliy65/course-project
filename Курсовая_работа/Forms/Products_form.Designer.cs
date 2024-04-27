@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products_form));
             panel1 = new Panel();
             panel2 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -140,7 +141,7 @@
             // button4
             // 
             button4.BackColor = Color.Transparent;
-            button4.BackgroundImage = Properties.Resources.user;
+            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
             button4.BackgroundImageLayout = ImageLayout.Center;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;

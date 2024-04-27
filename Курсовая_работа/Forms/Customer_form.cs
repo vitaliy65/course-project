@@ -1,4 +1,5 @@
 ﻿using image_description_button;
+using System.Diagnostics.Metrics;
 using System.Windows.Forms;
 using Курсовая_работа.Classes;
 using Курсовая_работа.model;
@@ -21,13 +22,15 @@ namespace Курсовая_работа.Forms
             button2.MouseLeave += ButtonInteraction.DownScale_button;
             button3.MouseEnter += ButtonInteraction.UpScale_button;
             button3.MouseLeave += ButtonInteraction.DownScale_button;
+            LogOut.MouseEnter += ButtonInteraction.UpScale_button;
+            LogOut.MouseLeave += ButtonInteraction.DownScale_button;
         }
 
         private void InitializeCustomer()
         {
             label1.Text = RegistredCustomer.CurrentCustomer.gmail;
             label2.Text = RegistredCustomer.CurrentCustomer.phone;
-            label3.Text = $"{RegistredCustomer.CurrentCustomer.Latitude} / {RegistredCustomer.CurrentCustomer.Longitude}";
+            label3.Text = $"{RegistredCustomer.CurrentCustomer.country} / {RegistredCustomer.CurrentCustomer.regionName} / {RegistredCustomer.CurrentCustomer.city}";
         }
 
         private void InitializeCart()
@@ -44,7 +47,7 @@ namespace Курсовая_работа.Forms
                     listItemBanner listItem = new listItemBanner();
                     // Настраиваем его свойства на основе данных продукта
                     listItem.Productimage = new Bitmap($"{Application.StartupPath}\\{product.FilePathimage}");
-                    listItem.label_Name = "\""+ product.Name + "\"";
+                    listItem.label_Name = "\"" + product.Name + "\"";
                     listItem.label_Price = product.Price.ToString() + " грн";
                     total_price += product.Price;
                     // Добавляем listItemBanner в FlowLayoutPanel
@@ -93,6 +96,30 @@ namespace Курсовая_работа.Forms
             RegistredCustomer.ClearCart();
             flowLayoutPanel1.Controls.Clear();
             label4.Text = "0 грн";
+        }
+
+        private void LogOut_MouseDown(object sender, MouseEventArgs e)
+        {
+            LogOut.BackgroundImage = new Bitmap($"{Application.StartupPath}\\Resources\\buttons\\button_LogOut_clicked.png");
+        }
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            // Путь к файлу, который нужно удалить
+            string filePath = "userData.json";
+
+            try
+            {
+                File.Delete(filePath);
+
+                SignUpForm form = new SignUpForm();
+                form.Show();
+                form.Location = Location;
+                Hide();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка при удалении файла: {ex.Message}");
+            }
         }
     }
 }

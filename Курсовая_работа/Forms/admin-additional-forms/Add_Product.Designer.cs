@@ -40,6 +40,8 @@
             textBox5 = new TextBox();
             dataGridView1 = new DataGridView();
             button1 = new Button();
+            checkedListBox1 = new CheckedListBox();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -143,7 +145,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(423, 31);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(240, 518);
+            dataGridView1.Size = new Size(610, 518);
             dataGridView1.TabIndex = 10;
             dataGridView1.CurrentCellChanged += dataGridView1_SelectionChanged;
             // 
@@ -152,7 +154,7 @@
             button1.BackColor = Color.LightGreen;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button1.Location = new Point(111, 305);
+            button1.Location = new Point(118, 500);
             button1.Name = "button1";
             button1.Size = new Size(150, 35);
             button1.TabIndex = 11;
@@ -160,12 +162,34 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(12, 295);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.ScrollAlwaysVisible = true;
+            checkedListBox1.Size = new Size(360, 184);
+            checkedListBox1.TabIndex = 12;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 9F);
+            label6.ForeColor = SystemColors.WindowFrame;
+            label6.Location = new Point(14, 482);
+            label6.Name = "label6";
+            label6.Size = new Size(55, 14);
+            label6.TabIndex = 13;
+            label6.Text = "категорії";
+            // 
             // Add_Product
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.PeachPuff;
-            ClientSize = new Size(674, 561);
+            ClientSize = new Size(1045, 561);
+            Controls.Add(label6);
+            Controls.Add(checkedListBox1);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(textBox5);
@@ -200,5 +224,7 @@
         private TextBox textBox5;
         private DataGridView dataGridView1;
         private Button button1;
+        private CheckedListBox checkedListBox1;
+        private Label label6;
     }
 }

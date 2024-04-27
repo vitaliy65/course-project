@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+public enum ProductCategoryEnum
+{
+    AlcoholicBeverages,
+    AppetizerPlatters,
+    Appetizers,
+    Barbecue,
+    Beverages,
+    Breakfast,
+    Burgers,
+    Cocktails,
+    Coffee,
+    ComboDeals,
+    CustomOrders,
+    DairyFree,
+    Desserts,
+    Dinner,
+    FastFood,
+    FamilyMeals,
+    GlutenFree,
+    GrilledItems,
+    InternationalCuisine,
+    Juices,
+    LocalSpecialties,
+    Lunch,
+    MainDishes,
+    Noodles,
+    NonAlcoholicBeverages,
+    Organic,
+    Other,
+    PartyTrays,
+    Pasta,
+    Pastries,
+    Pizzas,
+    Rice,
+    Salads,
+    Sandwiches,
+    Seafood,
+    Sides,
+    Smoothies,
+    Snacks,
+    Soups,
+    Steaks,
+    Sushi,
+    Tacos,
+    Tea,
+    Vegetarian,
+    Vegan,
+    Wraps
+}

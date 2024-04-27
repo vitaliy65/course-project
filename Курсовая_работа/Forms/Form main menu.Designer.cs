@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_main_menu));
-            button3 = new Button();
+            Location_button = new Button();
             button2 = new Button();
             button1 = new Button();
             panel2 = new Panel();
@@ -40,21 +40,22 @@
             panel3.SuspendLayout();
             SuspendLayout();
             // 
-            // button3
+            // Location_button
             // 
-            button3.BackColor = Color.Transparent;
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Zoom;
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(641, 90);
-            button3.Name = "button3";
-            button3.Size = new Size(153, 153);
-            button3.TabIndex = 45;
-            button3.UseVisualStyleBackColor = false;
+            Location_button.BackColor = Color.Transparent;
+            Location_button.BackgroundImage = (Image)resources.GetObject("Location_button.BackgroundImage");
+            Location_button.BackgroundImageLayout = ImageLayout.Zoom;
+            Location_button.Cursor = Cursors.Hand;
+            Location_button.FlatAppearance.BorderSize = 0;
+            Location_button.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            Location_button.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            Location_button.FlatStyle = FlatStyle.Flat;
+            Location_button.Location = new Point(641, 90);
+            Location_button.Name = "Location_button";
+            Location_button.Size = new Size(153, 153);
+            Location_button.TabIndex = 45;
+            Location_button.UseVisualStyleBackColor = false;
+            Location_button.Click += Location_button_Click;
             // 
             // button2
             // 
@@ -71,6 +72,7 @@
             button2.Size = new Size(153, 153);
             button2.TabIndex = 44;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -87,6 +89,7 @@
             button1.Size = new Size(153, 153);
             button1.TabIndex = 43;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += All_menu_Click;
             // 
             // panel2
             // 
@@ -109,7 +112,7 @@
             // button4
             // 
             button4.BackColor = Color.Transparent;
-            button4.BackgroundImage = Properties.Resources.user;
+            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
             button4.BackgroundImageLayout = ImageLayout.Stretch;
             button4.Cursor = Cursors.Hand;
             button4.FlatAppearance.BorderSize = 0;
@@ -121,14 +124,14 @@
             button4.Size = new Size(48, 48);
             button4.TabIndex = 13;
             button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            button4.Click += Profile_Click;
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
-            panel3.Controls.Add(button3);
+            panel3.Controls.Add(Location_button);
             panel3.Controls.Add(button1);
             panel3.Controls.Add(button2);
             panel3.Controls.Add(button4);
@@ -159,7 +162,7 @@
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button button1;
-        private Button button3;
+        private Button Location_button;
         private Button button2;
         private Panel panel3;
     }

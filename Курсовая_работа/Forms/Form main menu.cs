@@ -1,4 +1,5 @@
 ﻿using image_description_button;
+using System.Diagnostics;
 using Курсовая_работа.Controller;
 using Курсовая_работа.Forms;
 using Курсовая_работа.model;
@@ -18,8 +19,8 @@ namespace Курсовая_работа
             button1.MouseLeave += ButtonInteraction.DownScale_button;
             button2.MouseEnter += ButtonInteraction.UpScale_button;
             button2.MouseLeave += ButtonInteraction.DownScale_button;
-            button3.MouseEnter += ButtonInteraction.UpScale_button;
-            button3.MouseLeave += ButtonInteraction.DownScale_button;
+            Location_button.MouseEnter += ButtonInteraction.UpScale_button;
+            Location_button.MouseLeave += ButtonInteraction.DownScale_button;
             button4.MouseEnter += ButtonInteraction.UpScale_button;
             button4.MouseLeave += ButtonInteraction.DownScale_button;
             InstantiateAllUserControls();
@@ -76,12 +77,45 @@ namespace Курсовая_работа
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Profile_Click(object sender, EventArgs e)
         {
             Customer_form form = new Customer_form();
             form.Show();
             form.Location = Location;
             Hide();
+        }
+
+        private void All_menu_Click(object sender, EventArgs e)
+        {
+            allMenuForm form = new allMenuForm();
+            form.Show();
+            form.Location = Location;
+            Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string channelLink = "https://t.me/MyFirst_KHAI_Bot";
+
+            try
+            {
+                // Запускаем стандартное приложение браузера с ссылкой на канал
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = channelLink,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                // В случае ошибки выводим сообщение или обрабатываем исключение
+                MessageBox.Show("Ошибка при открытии ссылки: " + ex.Message);
+            }
+        }
+
+        private void Location_button_Click(object sender, EventArgs e)
+        {
+            _ = ButtonInteraction.GetLocationAsync();
         }
     }
 }

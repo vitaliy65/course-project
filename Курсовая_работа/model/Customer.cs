@@ -13,6 +13,9 @@
         // Свойства для хранения координат
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        public string country { get; set; }
+        public string regionName { get; set; }
+        public string city { get; set; }
 
         public Customer() { }
 

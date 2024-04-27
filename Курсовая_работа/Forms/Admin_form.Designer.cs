@@ -47,6 +47,8 @@
             button1 = new Button();
             label2 = new Label();
             label1 = new Label();
+            label6 = new Label();
+            checkedListBox1 = new CheckedListBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -76,6 +78,8 @@
             // panel2
             // 
             panel2.BackColor = Color.Bisque;
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(checkedListBox1);
             panel2.Controls.Add(button7);
             panel2.Controls.Add(button6);
             panel2.Controls.Add(textBox5);
@@ -94,7 +98,7 @@
             button7.BackColor = Color.Tomato;
             button7.FlatStyle = FlatStyle.Popup;
             button7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button7.Location = new Point(3, 189);
+            button7.Location = new Point(3, 467);
             button7.Name = "button7";
             button7.Size = new Size(367, 35);
             button7.TabIndex = 18;
@@ -107,7 +111,7 @@
             button6.BackColor = Color.MediumSeaGreen;
             button6.FlatStyle = FlatStyle.Popup;
             button6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button6.Location = new Point(3, 148);
+            button6.Location = new Point(3, 426);
             button6.Name = "button6";
             button6.Size = new Size(367, 35);
             button6.TabIndex = 17;
@@ -269,6 +273,28 @@
             label1.TabIndex = 2;
             label1.Text = "Restaurants";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 9F);
+            label6.ForeColor = SystemColors.WindowFrame;
+            label6.Location = new Point(5, 335);
+            label6.Name = "label6";
+            label6.Size = new Size(55, 14);
+            label6.TabIndex = 20;
+            label6.Text = "категорії";
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.Enabled = false;
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(3, 148);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.ScrollAlwaysVisible = true;
+            checkedListBox1.Size = new Size(367, 184);
+            checkedListBox1.TabIndex = 19;
+            checkedListBox1.Visible = false;
+            // 
             // Admin_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -309,5 +335,7 @@
         private Button button7;
         private Button button6;
         private TextBox textBox5;
+        private Label label6;
+        private CheckedListBox checkedListBox1;
     }
 }

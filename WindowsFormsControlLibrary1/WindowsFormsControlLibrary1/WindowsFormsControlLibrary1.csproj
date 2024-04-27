@@ -54,6 +54,7 @@
     <Compile Include="ProductBanner.Designer.cs">
       <DependentUpon>ProductBanner.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductCategoryEnum.cs" />
     <Compile Include="RestaurantBanner.cs">
       <SubType>UserControl</SubType>
     </Compile>

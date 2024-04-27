@@ -1,6 +1,6 @@
 ﻿using Курсовая_работа.Controller;
+using Курсовая_работа.EnumCategory;
 using Курсовая_работа.Forms.admin_additional_forms;
-using Курсовая_работа.Interfaces;
 using Курсовая_работа.model;
 
 namespace Курсовая_работа.Forms
@@ -8,17 +8,28 @@ namespace Курсовая_работа.Forms
     public partial class Admin_form : Form
     {
         ProductController productController;
+        ProductCategoryController categoryController;
         RestaurantController restaurantController;
 
         public Admin_form()
         {
             InitializeComponent();
+            InitializationList();
             productController = new ProductController();
             restaurantController = new RestaurantController();
+            categoryController = new ProductCategoryController();
 
             FormClosing += ButtonInteraction.FormClosing;
 
             UpdateData(dataGridView1, restaurantController.GetElements());
+        }
+
+        void InitializationList()
+        {
+            foreach (var item in Enum.GetValues(typeof(ProductCategoryEnum)))
+            {
+                checkedListBox1.Items.Add(item);
+            }
         }
 
         private void SelectedData_dataFridView1(object sender, EventArgs e)
@@ -45,7 +56,7 @@ namespace Курсовая_работа.Forms
         {
             if (dataGridView2.SelectedRows.Count > 0 && dataGridView2.SelectedRows[0] != null)
             {
-                int productId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["ProductId"].Value);
+                int productId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["Id"].Value);
                 productController.RemoveById(productId);
                 UpdateData(dataGridView2, productController.GetElements());
             }
@@ -79,11 +90,38 @@ namespace Курсовая_работа.Forms
 
         private void PopulateTextBoxes(DataGridViewRow row, bool isProduct)
         {
+            checkedListBox1.Visible = false;
+            checkedListBox1.Enabled = false;
             textBox1.Text = isProduct ? row.Cells["RestaurantId"].Value.ToString() : row.Cells["FilePathImage"].Value.ToString();
             textBox2.Text = row.Cells["Name"].Value.ToString();
             textBox3.Text = isProduct ? row.Cells["Price"].Value.ToString() : row.Cells["timeForCustomer"].Value.ToString();
             textBox4.Text = row.Cells["Description"].Value.ToString();
             textBox5.Text = isProduct ? row.Cells["FilePathimage"].Value.ToString() : "";
+
+            if (isProduct)
+            {
+                checkedListBox1.Visible = true;
+                checkedListBox1.Enabled = true;
+                Product product = ExtractProductFromSelectedRow(dataGridView2.SelectedRows[0]);
+                
+                // Снимаем все галочки в CheckedListBox
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                {
+                    checkedListBox1.SetItemChecked(i, false);
+                }
+
+                foreach (var productCategory in categoryController.FindAll(c => c.ProductId == product.Id))
+                {
+                    for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                    {
+                        if (productCategory.category == Enum.Parse<ProductCategoryEnum>(checkedListBox1.Items[i].ToString()))
+                        {
+                            checkedListBox1.SetItemChecked(i, true);
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         private void change_save_Click(object sender, EventArgs e)
@@ -96,6 +134,16 @@ namespace Курсовая_работа.Forms
                 {
                     Product product = ExtractProductFromSelectedRow(dataGridView2.SelectedRows[0]);
                     productController.Change(product);
+
+                    categoryController.Remove(p => p.ProductId == product.Id);
+
+                    foreach (ProductCategoryEnum item in checkedListBox1.CheckedItems)
+                    {
+                        ProductCategory productCategory = new();
+                        productCategory.ProductId = product.Id;
+                        productCategory.category = item;
+                        categoryController.Add(productCategory);
+                    }
                 }
                 else if (dataGridView1.SelectedRows.Count > 0 && dataGridView1.SelectedRows[0] != null)
                 {
@@ -115,7 +163,7 @@ namespace Курсовая_работа.Forms
         {
             return new Product
             {
-                Id = int.Parse(row.Cells["ProductId"].Value.ToString()),
+                Id = int.Parse(row.Cells["Id"].Value.ToString()),
                 RestaurantId = int.Parse(textBox1.Text),
                 Name = textBox2.Text,
                 Price = float.Parse(textBox3.Text),

@@ -1,20 +1,32 @@
 ﻿using System.Windows.Forms;
 using Курсовая_работа.Controller;
+using Курсовая_работа.EnumCategory;
 using Курсовая_работа.model;
 
 namespace Курсовая_работа.Forms.admin_additional_forms
 {
     public partial class Add_Product : Form
     {
-        ProductController controller;
+        ProductController productController;
+        ProductCategoryController categoryController;
         readonly RestaurantController restaurantController;
 
         public Add_Product()
         {
             InitializeComponent();
-            controller = new ProductController();
+            InitializationList();
+            productController = new ProductController();
             restaurantController = new RestaurantController();
+            categoryController = new ProductCategoryController();
             dataGridView1.DataSource = restaurantController.GetElements().ToList();
+        }
+
+        void InitializationList()
+        {
+            foreach (var item in Enum.GetValues(typeof(ProductCategoryEnum)))
+            {
+                checkedListBox1.Items.Add(item);
+            }
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -39,8 +51,16 @@ namespace Курсовая_работа.Forms.admin_additional_forms
                 product.Name = textBox4.Text;
                 product.Description = textBox5.Text;
 
-                controller.Add(product);
+                productController.Add(product);
                 Close();
+
+                foreach (var item in checkedListBox1.CheckedItems)
+                {
+                    ProductCategory productCategory = new();
+                    productCategory.ProductId = product.Id;
+                    productCategory.category = Enum.Parse<ProductCategoryEnum>(item.ToString());
+                    categoryController.Add(productCategory);
+                }
             }
             catch (Exception xp)
             {

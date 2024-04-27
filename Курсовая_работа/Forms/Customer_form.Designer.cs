@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_form));
             panel1 = new Panel();
+            button2 = new Button();
+            LogOut = new Button();
+            button3 = new Button();
             label4 = new Label();
             panel2 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button3 = new Button();
-            button2 = new Button();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -48,10 +49,11 @@
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(LogOut);
+            panel1.Controls.Add(button3);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -61,6 +63,62 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1024, 768);
             panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.Transparent;
+            button2.Location = new Point(311, 713);
+            button2.Name = "button2";
+            button2.Size = new Size(123, 43);
+            button2.TabIndex = 5;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            button2.MouseDown += button2_MouseDown;
+            button2.MouseUp += button2_MouseUp;
+            // 
+            // LogOut
+            // 
+            LogOut.BackColor = Color.Transparent;
+            LogOut.BackgroundImage = (Image)resources.GetObject("LogOut.BackgroundImage");
+            LogOut.BackgroundImageLayout = ImageLayout.Stretch;
+            LogOut.FlatAppearance.BorderSize = 0;
+            LogOut.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            LogOut.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            LogOut.FlatStyle = FlatStyle.Flat;
+            LogOut.ForeColor = Color.Transparent;
+            LogOut.Location = new Point(889, 12);
+            LogOut.Name = "LogOut";
+            LogOut.Size = new Size(123, 43);
+            LogOut.TabIndex = 10;
+            LogOut.UseVisualStyleBackColor = false;
+            LogOut.Click += LogOut_Click;
+            LogOut.MouseDown += LogOut_MouseDown;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Transparent;
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = Color.Transparent;
+            button3.Location = new Point(440, 713);
+            button3.Name = "button3";
+            button3.Size = new Size(123, 43);
+            button3.TabIndex = 6;
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            button3.MouseDown += button3_MouseDown;
+            button3.MouseUp += button3_MouseUp;
             // 
             // label4
             // 
@@ -95,44 +153,6 @@
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(780, 480);
             flowLayoutPanel1.TabIndex = 7;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Transparent;
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button3.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.Transparent;
-            button3.Location = new Point(788, 149);
-            button3.Name = "button3";
-            button3.Size = new Size(123, 43);
-            button3.TabIndex = 6;
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            button3.MouseDown += button3_MouseDown;
-            button3.MouseUp += button3_MouseUp;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Transparent;
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.Transparent;
-            button2.Location = new Point(649, 149);
-            button2.Name = "button2";
-            button2.Size = new Size(123, 43);
-            button2.TabIndex = 5;
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            button2.MouseDown += button2_MouseDown;
-            button2.MouseUp += button2_MouseUp;
             // 
             // label3
             // 
@@ -177,7 +197,7 @@
             button1.FlatAppearance.MouseOverBackColor = Color.Transparent;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.Transparent;
-            button1.Location = new Point(449, 712);
+            button1.Location = new Point(569, 714);
             button1.Name = "button1";
             button1.Size = new Size(123, 43);
             button1.TabIndex = 1;
@@ -212,5 +232,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel2;
         private Label label4;
+        private Button LogOut;
     }
 }
