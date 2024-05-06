@@ -122,6 +122,7 @@
             ClientSize = new Size(512, 768);
             Controls.Add(panel1);
             Name = "buy_product_form";
+            StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

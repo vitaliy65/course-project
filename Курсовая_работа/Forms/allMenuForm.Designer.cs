@@ -145,6 +145,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "allMenuForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "allMenuForm";
             Load += allMenuForm_Load;
             panel1.ResumeLayout(false);

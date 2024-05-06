@@ -70,7 +70,6 @@ namespace Курсовая_работа.Forms
                         {
                             buy_product_form buy_product_Form = new buy_product_form(product);
                             buy_product_Form.Show();
-                            buy_product_Form.Location = Location;
                             return;
                         }
                     }
@@ -82,7 +81,6 @@ namespace Курсовая_работа.Forms
         {
             Form_main_menu form_Main_Menu = new Form_main_menu();
             form_Main_Menu.Show();
-            form_Main_Menu.Location = Location;
             Hide();
         }
 
@@ -90,7 +88,6 @@ namespace Курсовая_работа.Forms
         {
             Customer_form form = new Customer_form();
             form.Show();
-            form.Location = Location;
             Hide();
         }
     }

@@ -126,7 +126,6 @@ namespace Курсовая_работа.Forms
         {
             Form_main_menu form = new Form_main_menu();
             form.Show();
-            form.Location = Location;
             Hide();
         }
 
@@ -134,7 +133,6 @@ namespace Курсовая_работа.Forms
         {
             Customer_form form = new Customer_form();
             form.Show();
-            form.Location = Location;
             Hide();
         }
 

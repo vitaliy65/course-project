@@ -1,5 +1,8 @@
 ﻿using image_description_button;
+using Microsoft.Web.WebView2.Core;
 using System.Diagnostics;
+using System.Windows.Forms;
+using Курсовая_работа.Classes;
 using Курсовая_работа.Controller;
 using Курсовая_работа.Forms;
 using Курсовая_работа.model;
@@ -68,7 +71,6 @@ namespace Курсовая_работа
                         {
                             Products_form products_Form = new Products_form(restaurant);
                             products_Form.Show();
-                            products_Form.Location = Location;
                             Hide();
                             return;
                         }
@@ -81,7 +83,6 @@ namespace Курсовая_работа
         {
             Customer_form form = new Customer_form();
             form.Show();
-            form.Location = Location;
             Hide();
         }
 
@@ -89,7 +90,6 @@ namespace Курсовая_работа
         {
             allMenuForm form = new allMenuForm();
             form.Show();
-            form.Location = Location;
             Hide();
         }
 
@@ -115,7 +115,9 @@ namespace Курсовая_работа
 
         private void Location_button_Click(object sender, EventArgs e)
         {
-            _ = ButtonInteraction.GetLocationAsync();
+            GeoLocationForm geoLocationForm = new GeoLocationForm();
+            geoLocationForm.Show();
+            Hide();
         }
     }
 }

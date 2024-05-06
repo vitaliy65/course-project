@@ -1,13 +1,4 @@
 ﻿using System.Drawing.Imaging;
-using Курсовая_работа.Classes;
-using GeoCoordinatePortable;
-using Azure.Core.GeoJson;
-using Nest;
-using Windows.Devices.Geolocation;
-using System.Net;
-using Newtonsoft.Json.Linq;
-using System.Xml.Linq;
-using Newtonsoft.Json;
 
 public static class ButtonInteraction
 {
@@ -107,43 +98,5 @@ public static class ButtonInteraction
         }
 
         return bitmap;
-    }
-
-    public static async Task GetLocationAsync()
-    {
-        try
-        {
-            string apiUrl = "http://ip-api.com/json";
-
-            using (HttpClient client = new HttpClient())
-            {
-                HttpResponseMessage response = await client.GetAsync(apiUrl);
-                if (response.IsSuccessStatusCode)
-                {
-                    string json = await response.Content.ReadAsStringAsync();
-
-                    // Десериализуем JSON в объект JObject
-                    JObject data = JObject.Parse(json);
-
-                    // Извлекаем координаты
-                    double latitude = Convert.ToDouble(data["lat"]);
-                    double longitude = Convert.ToDouble(data["lon"]);
-                    string country = Convert.ToString(data["country"]);
-                    string regionName = Convert.ToString(data["regionName"]);
-                    string city = Convert.ToString(data["city"]);
-
-                    // Присваиваем координаты текущему пользователю (RegistredCustomer)
-                    RegistredCustomer.CurrentCustomer.Latitude = latitude;
-                    RegistredCustomer.CurrentCustomer.Longitude = longitude;
-                    RegistredCustomer.CurrentCustomer.country = country;
-                    RegistredCustomer.CurrentCustomer.regionName = regionName;
-                    RegistredCustomer.CurrentCustomer.city = city;
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Ошибка: {ex.Message}");
-        }
     }
 }

@@ -144,6 +144,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Name = "Add_Restaurant";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Add_Restaurant";
             ResumeLayout(false);
             PerformLayout();

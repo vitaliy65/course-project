@@ -155,6 +155,7 @@
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "SignUpForm";
+            StartPosition = FormStartPosition.CenterScreen;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);

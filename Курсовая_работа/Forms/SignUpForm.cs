@@ -31,7 +31,6 @@ namespace Курсовая_работа
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Registration_form form = new Registration_form();
-            form.Location = Location;
             form.Show();
             Hide();
         }
@@ -78,7 +77,6 @@ namespace Курсовая_работа
         void OpenMainForm()
         {
             Form_main_menu main_Menu = new Form_main_menu();
-            main_Menu.Location = Location;
             main_Menu.Show();
             Hide();
         }

@@ -30,6 +30,8 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
+            label6 = new Label();
+            checkedListBox1 = new CheckedListBox();
             button7 = new Button();
             button6 = new Button();
             textBox5 = new TextBox();
@@ -47,8 +49,6 @@
             button1 = new Button();
             label2 = new Label();
             label1 = new Label();
-            label6 = new Label();
-            checkedListBox1 = new CheckedListBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -92,6 +92,28 @@
             panel2.Size = new Size(373, 512);
             panel2.TabIndex = 16;
             panel2.Visible = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Tahoma", 9F);
+            label6.ForeColor = SystemColors.WindowFrame;
+            label6.Location = new Point(5, 335);
+            label6.Name = "label6";
+            label6.Size = new Size(55, 14);
+            label6.TabIndex = 20;
+            label6.Text = "категорії";
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.Enabled = false;
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(3, 148);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.ScrollAlwaysVisible = true;
+            checkedListBox1.Size = new Size(367, 184);
+            checkedListBox1.TabIndex = 19;
+            checkedListBox1.Visible = false;
             // 
             // button7
             // 
@@ -273,28 +295,6 @@
             label1.TabIndex = 2;
             label1.Text = "Restaurants";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tahoma", 9F);
-            label6.ForeColor = SystemColors.WindowFrame;
-            label6.Location = new Point(5, 335);
-            label6.Name = "label6";
-            label6.Size = new Size(55, 14);
-            label6.TabIndex = 20;
-            label6.Text = "категорії";
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.Enabled = false;
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(3, 148);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.ScrollAlwaysVisible = true;
-            checkedListBox1.Size = new Size(367, 184);
-            checkedListBox1.TabIndex = 19;
-            checkedListBox1.Visible = false;
-            // 
             // Admin_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -304,6 +304,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Admin_form";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin_form";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

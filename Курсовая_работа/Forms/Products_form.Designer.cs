@@ -159,6 +159,7 @@
             ClientSize = new Size(1024, 768);
             Controls.Add(panel1);
             Name = "Products_form";
+            StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

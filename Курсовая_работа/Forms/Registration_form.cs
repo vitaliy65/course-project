@@ -39,9 +39,8 @@ namespace Курсовая_работа
                 Customer customer = new Customer(gmail: textBox1.Text, password: hasher.HashPassword(textBox2.Text), phone: textBox3.Text);
                 customerController.Add(customer);
 
-                this.Hide();
+                Hide();
                 SignUpForm form = new SignUpForm();
-                form.Location = Location;
                 form.Show();
             }
 

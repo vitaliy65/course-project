@@ -30,7 +30,7 @@ namespace Курсовая_работа.Forms
         {
             label1.Text = RegistredCustomer.CurrentCustomer.gmail;
             label2.Text = RegistredCustomer.CurrentCustomer.phone;
-            label3.Text = $"{RegistredCustomer.CurrentCustomer.country} / {RegistredCustomer.CurrentCustomer.regionName} / {RegistredCustomer.CurrentCustomer.city}";
+            label3.Text = $"{RegistredCustomer.CurrentCustomer.street} / {RegistredCustomer.CurrentCustomer.regionName} / {RegistredCustomer.CurrentCustomer.city}";
         }
 
         private void InitializeCart()
@@ -66,7 +66,6 @@ namespace Курсовая_работа.Forms
         {
             Form_main_menu form = new Form_main_menu();
             form.Show();
-            form.Location = Location;
             Hide();
         }
 
@@ -113,7 +112,6 @@ namespace Курсовая_работа.Forms
 
                 SignUpForm form = new SignUpForm();
                 form.Show();
-                form.Location = Location;
                 Hide();
             }
             catch (Exception ex)

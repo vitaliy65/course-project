@@ -204,6 +204,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Add_Product";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "add_Product";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

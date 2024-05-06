@@ -36,8 +36,10 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             button4 = new Button();
             panel3 = new Panel();
+            webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)webView21).BeginInit();
             SuspendLayout();
             // 
             // Location_button
@@ -131,6 +133,7 @@
             panel3.BackColor = Color.White;
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
             panel3.BackgroundImageLayout = ImageLayout.Stretch;
+            panel3.Controls.Add(webView21);
             panel3.Controls.Add(Location_button);
             panel3.Controls.Add(button1);
             panel3.Controls.Add(button2);
@@ -142,6 +145,16 @@
             panel3.Size = new Size(1024, 768);
             panel3.TabIndex = 46;
             // 
+            // webView21
+            // 
+            webView21.CreationProperties = null;
+            webView21.DefaultBackgroundColor = Color.White;
+            webView21.Location = new Point(-16, -9);
+            webView21.Name = "webView21";
+            webView21.Size = new Size(0, 0);
+            webView21.TabIndex = 46;
+            webView21.ZoomFactor = 1D;
+            // 
             // Form_main_menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -152,8 +165,10 @@
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form_main_menu";
+            StartPosition = FormStartPosition.CenterScreen;
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)webView21).EndInit();
             ResumeLayout(false);
         }
 
@@ -165,5 +180,6 @@
         private Button Location_button;
         private Button button2;
         private Panel panel3;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }
