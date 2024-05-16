@@ -23,7 +23,14 @@ namespace Курсовая_работа.Forms
                 label1.Text = $"Ціна: {thisProduct.Price} грн.";
                 label2.Text = $"Назва: {thisProduct.Name}";
                 textBox1.Text = thisProduct.Description;
-                pictureBox1.BackgroundImage = new Bitmap($"{Application.StartupPath}\\{thisProduct.FilePathimage}");
+                try
+                {
+                    pictureBox1.BackgroundImage = new Bitmap($"{Application.StartupPath}\\{thisProduct.FilePathimage}");
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show("невалідна картинка!");
+                }
             }
         }
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button8 = new Button();
             panel2 = new Panel();
             label6 = new Label();
             checkedListBox1 = new CheckedListBox();
@@ -58,6 +59,7 @@
             // panel1
             // 
             panel1.BackColor = Color.PeachPuff;
+            panel1.Controls.Add(button8);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(button5);
@@ -75,6 +77,19 @@
             panel1.Size = new Size(1541, 768);
             panel1.TabIndex = 0;
             // 
+            // button8
+            // 
+            button8.BackColor = Color.SkyBlue;
+            button8.FlatStyle = FlatStyle.Popup;
+            button8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button8.Location = new Point(1152, 721);
+            button8.Name = "button8";
+            button8.Size = new Size(373, 35);
+            button8.TabIndex = 17;
+            button8.Text = "main menu";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += toMainMenuClick;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.Bisque;
@@ -89,7 +104,7 @@
             panel2.Controls.Add(textBox1);
             panel2.Location = new Point(1152, 244);
             panel2.Name = "panel2";
-            panel2.Size = new Size(373, 512);
+            panel2.Size = new Size(373, 437);
             panel2.TabIndex = 16;
             panel2.Visible = false;
             // 
@@ -120,7 +135,7 @@
             button7.BackColor = Color.Tomato;
             button7.FlatStyle = FlatStyle.Popup;
             button7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button7.Location = new Point(3, 467);
+            button7.Location = new Point(3, 393);
             button7.Name = "button7";
             button7.Size = new Size(367, 35);
             button7.TabIndex = 18;
@@ -133,7 +148,7 @@
             button6.BackColor = Color.MediumSeaGreen;
             button6.FlatStyle = FlatStyle.Popup;
             button6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button6.Location = new Point(3, 426);
+            button6.Location = new Point(3, 352);
             button6.Name = "button6";
             button6.Size = new Size(367, 35);
             button6.TabIndex = 17;
@@ -338,5 +353,6 @@
         private TextBox textBox5;
         private Label label6;
         private CheckedListBox checkedListBox1;
+        private Button button8;
     }
 }

@@ -103,7 +103,7 @@ namespace Курсовая_работа.Forms
                 checkedListBox1.Visible = true;
                 checkedListBox1.Enabled = true;
                 Product product = ExtractProductFromSelectedRow(dataGridView2.SelectedRows[0]);
-                
+
                 // Снимаем все галочки в CheckedListBox
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
@@ -197,6 +197,12 @@ namespace Курсовая_работа.Forms
         {
             panel2.Visible = false;
             ClearTextBoxes();
+        }
+
+        private void toMainMenuClick(object sender, EventArgs e)
+        {
+            Form_main_menu_tester form = new Form_main_menu_tester();
+            form.Show();
         }
 
         void UpdateData<T>(DataGridView dataGrid, IEnumerable<T> elements)

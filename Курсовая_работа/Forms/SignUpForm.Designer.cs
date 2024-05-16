@@ -105,7 +105,7 @@
             linkLabel1.BackColor = Color.Transparent;
             linkLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             linkLabel1.LinkColor = Color.FromArgb(0, 0, 192);
-            linkLabel1.Location = new Point(467, 617);
+            linkLabel1.Location = new Point(464, 617);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(94, 21);
             linkLabel1.TabIndex = 13;

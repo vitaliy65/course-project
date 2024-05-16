@@ -81,5 +81,12 @@ namespace Курсовая_работа
                 textBox.SelectionStart = textBox.Text.Length; // Перемещаем курсор в конец текста
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SignUpForm form = new SignUpForm();
+            form.Show();
+            Hide();
+        }
     }
 }

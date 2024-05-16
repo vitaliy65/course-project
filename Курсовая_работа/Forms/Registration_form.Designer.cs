@@ -37,6 +37,7 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             button1 = new Button();
+            linkLabel1 = new LinkLabel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(panel4);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
@@ -138,6 +140,22 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.ActiveLinkColor = Color.FromArgb(255, 128, 0);
+            linkLabel1.AutoSize = true;
+            linkLabel1.BackColor = Color.Transparent;
+            linkLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            linkLabel1.LinkColor = Color.FromArgb(0, 0, 192);
+            linkLabel1.Location = new Point(480, 577);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(63, 21);
+            linkLabel1.TabIndex = 14;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Sign up";
+            linkLabel1.VisitedLinkColor = Color.FromArgb(255, 128, 0);
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // Registration_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -162,5 +180,6 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
+        private LinkLabel linkLabel1;
     }
 }

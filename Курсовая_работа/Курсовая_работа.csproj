@@ -36,6 +36,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Forms\admin-additional-forms\allMenuForm - tester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\admin-additional-forms\Form main menu - tester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\admin-additional-forms\Products_form - tester.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
